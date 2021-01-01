@@ -1,0 +1,36 @@
+<div class="container-fluid">
+	<div class="row">
+    <div class="col-md-12">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-dark bg-dark">
+         
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="navbar-toggler-icon"></span>
+        </button> <a class="navbar-brand" href="#"> Customer Information System </a>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="navbar-nav">
+            {% if request.user.is_staff %}
+            <li class="nav-item active">
+               <a class="nav-link" href="{% url 'home' %}"> <b> Dashboard </b></a>
+            </li>
+            <li class="nav-item active">
+               <a class="nav-link" href="#"> <b> Products </b></a>
+            </li>
+            {% endif %}
+            <li class="navb-item active">
+              <a href="{% url 'register' %}" class="nav-link float-right" title="">Register</a>
+            </li>
+            <li class="navb-item active">
+              <a href="{% url 'loginPage' %}" class="nav-link float-right" title="">Login</a>
+            </li>
+            <li class="navb-item active">
+              <a href="{% url 'logoutUser' %}" class="nav-link float-right" title="">Logout</a>
+            </li>
+          </ul>
+        </div>
+        <span class="text-white mr-5">Hello, {{ request.user }}</span>
+      </nav>
+    </div>
+  </div><br>
+	{% block content %}
+
+	{% endblock %}

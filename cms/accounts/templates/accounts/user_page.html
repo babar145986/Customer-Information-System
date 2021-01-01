@@ -1,0 +1,44 @@
+{% include 'accounts/main.html' %}
+
+{% block content %}
+
+{% include 'accounts/status.html' %}
+
+<div class="container-fluid">
+	<div class="card-header">
+		<h3>Search the Order</h3>
+		<div class="card-body">
+			<form action="" method="GET">
+				{% csrf_token %}
+					{{ myFilter.form }}
+				<button type="submit" class="btn btn-primary">Search</button>
+			</form>
+		</div>
+	</div>
+</div><br>
+
+<table class="table">
+	        <thead>
+	          <tr>
+	          	<th>S.NO</th>
+	            <th> Product </th>
+	            <th> Category </th>
+	            <th> Date Created </th>
+	            <th> Status </th>
+	            <th>  </th>
+	          </tr>
+	        </thead>
+	        <tbody>
+	        	{% for i in orders %}
+	          <tr>
+	          	<td> {{ i.id }} </td>
+	            <td> {{i.product}} </td>
+	            <td> {{i.product.category }} </td>
+	            <td> {{ i.date_created }} </td>
+	            <td> {{ i.status }} </td>
+	          </tr>
+	          {% endfor %}
+	        </tbody>
+	      </table>
+
+{% endblock %}

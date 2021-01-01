@@ -1,0 +1,35 @@
+
+<div class="row">
+    <div class="col-md-4">
+      <div class="card bg-info">
+        <h4 class="card-header text-center text-white">
+          Total Orders
+        </h4>
+        <div class="card-body text-center text-white" style="padding: 34px">
+          <h2> {{ total_order }} </h2>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card bg-info">
+        <h4 class="card-header text-center text-white">
+          Orders Delivered
+        </h4>
+        <div class="card-body text-center text-white" style="padding: 34px">
+          <h2> {{ delivered }} </h2>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card bg-info">
+        <h4 class="card-header text-center text-white">
+          Orders Pending
+        </h4>
+        <div class="card-body text-center text-white" style="padding: 34px">
+          <h2> {{ pending }} </h2>
+        </div>
+      </div>
+    </div>
+  </div><br>
+  {% block content %}
+  {% endblock %}
